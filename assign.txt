@@ -1,0 +1,7 @@
+Assign each original Task to exactly one of the predefined Tasks.
+
+Use the Task names and descriptions to determine the best fit. Use "Other" only when none of the predefined Tasks appropriately represents the original Task.
+
+Do not create, rename, combine, or modify Task names. The assigned Task must exactly match one of the predefined Task names or "Other".
+
+Return exactly one assignment for every original Task provided.

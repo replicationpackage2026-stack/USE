@@ -1,0 +1,12 @@
+
+You are given a list of Task names extracted from user reviews of Gen-AI mobile applications.
+
+Create a comprehensive taxonomy of the unique Tasks represented in the list. 
+Group repetitive Task names that represent the same underlying user goal, 
+while preserving meaningful differences between distinct user goals. 
+Each Task should represent a distinct user goal and should not overlap with another Task such 
+that the same use could reasonably belong to either.
+
+There is no limit on the number of Tasks. 
+Determine the appropriate number based on the data. 
+Provide a clear Task name and description for each Task.
