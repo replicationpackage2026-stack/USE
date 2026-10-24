@@ -1,0 +1,20 @@
+[
+    {
+      "unique_id": "aedu78698",
+      "content": "work. never ever been happy to do my work again because it's so easy to use this app",
+      "use_case": false,
+      "reason": "Work is too broad; no specific activity or purpose is described."
+    },
+    {
+      "unique_id": "pro480573",
+      "content": "the ai is fast and the option of being able to upload documents is very helpful and very easy to use.",
+      "use_case": false,
+      "reason": "Uploading documents is a feature/capability without a clear real-world purpose."
+    },
+    {
+        "unique_id": "pro245526",
+        "content": "this is a direct message to the developer. no matter what way you phrase the prompt it will tell you it can't edit people's faces even if it is my own face and i tell it it's my own face it still doesn't do it",
+        "use_case": true,
+        "reason": "Editing faces in photos is a concrete real-world activity."
+    }
+]

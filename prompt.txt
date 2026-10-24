@@ -1,0 +1,44 @@
+You are given a list of reviews, each with a unique ID.
+
+Task:
+Decide whether each review discusses a usage scenario.
+
+Definition:
+A usage scenario is a concrete real-world activity or purpose for which the reviewer uses or wants to use the app.
+
+The review must describe:
+- a specific user activity,
+- task domain,
+- or meaningful end goal.
+
+Examples of usage scenarios include:
+- studying,
+- research,
+- homework help,
+- creating YouTube thumbnails,
+- roleplaying,
+- tattoo inspiration,
+- photo enhancement,
+- translation,
+- business tasks,
+- writing,
+- or image generation.
+
+Do NOT count:
+- vague statements of usefulness,
+- general app praise,
+- broad capability claims,
+- interface interactions,
+- editing mechanics,
+- app settings,
+- or generic usage without a clear real-world purpose.
+
+If the review only discusses app quality, pricing, bugs, features, or general usefulness without describing a meaningful activity or purpose, label it as false.
+
+Output ONLY a JSON array of objects, one per review, exactly in this shape:
+{"unique_id":"<review id>","use_case":true|false,"reason":"≤20 words"}
+
+Do not skip any review.
+No headings.
+No extra keys.
+No narration.
