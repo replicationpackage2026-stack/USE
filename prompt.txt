@@ -1,0 +1,81 @@
+You are given a list of user reviews of Gen-AI applications. Each review has a unique ID.
+Your task is to extract the usage scenarios described in each review.
+A usage scenario is a distinct way the reviewer uses or wants to use the Gen-AI application to accomplish a user goal. A review may contain zero, one, or multiple usage scenarios.
+
+Each usage scenario is characterized by four attributes
+* Domain: the broader context or area of use.
+* Task: the general user goal or type of work.
+* Activity: the specific action through which the user accomplishes the Task.
+* Use Status: whether the usage is actual or desired.
+
+Every usage scenario must have a Task and Activity. Domain and Use Status are optional and should be null when they cannot be determined from the review.
+
+Create a separate usage scenario for each distinct Task.
+
+1. Domain
+Use the most appropriate Domain from the preferred vocabulary below when one adequately represents the usage scenario. If the usage clearly belongs to a meaningful broader area not represented by the vocabulary, create a new concise Domain.
+If the review does not provide enough information to determine a meaningful broader context, return `null`.
+Preferred Domain Vocabulary:
+* Education & Research: Learning, studying, language learning, teaching, coursework, homework, exam preparation, research, and other academic or learning activities.
+* Writing: Creating, developing, editing, or improving written content when no more specific context is established.
+* Language Translation: Translating content between languages.
+* Software Development: Programming, software creation, debugging, and other software-development activities.
+* Multimedia: Creating, editing, transforming, or working with images, video, audio, music, or other media when no more specific context is established.
+* Personal & Social Support: Emotional support, mental wellbeing, coping, self-reflection, personal guidance, relationship guidance, and social or companionship-oriented interaction with AI.
+* Health & Wellness: Physical health, medical information or guidance, symptoms, conditions, treatments, fitness, nutrition, and other physical health or wellness activities.
+* Professional & Business: Professional work, workplace productivity, career development, job seeking, entrepreneurship, management, marketing, sales, business strategy, and other work or commercial activities.
+* Legal: Understanding or working with legal matters, documents, rights, procedures, or options.
+* Entertainment: Recreational, playful, gaming, fictional roleplaying, imaginative, and other leisure-oriented uses of Gen-AI.
+
+2. Task
+The Task should generalize the specific Activity into a broader, reusable label while remaining supported by the review.
+Examples include: Lesson Planning, Emotional Support, Photo Editing, Image Generation, Code Debugging, Story Writing, and Story Editing.
+
+3. Activity
+The Activity should remain close to the concrete action described in the review and preserve meaningful contextual details. Do not include unrelated opinions, outcomes, problems, feature requests, or application limitations.
+Examples include: Generating lesson ideas for teaching, enhancing a blurry photo, debugging an error in Python code, or talking through anxious thoughts.
+
+4. Use Status
+Identify whether the usage scenario is:
+* "actual": The reviewer reports actually doing or having done the usage.
+* "desired": The reviewer wants, wishes, requests, or intends to do the usage.
+* null: The status cannot be determined from the review without speculation.
+
+Important Rules
+
+* Ground every usage scenario in the review. Do not introduce unsupported context, purposes, or assumptions.
+* Extract only meaningful uses of the Gen-AI application. Praise, outcomes, features, problems, or requirements alone are not usage scenarios.
+* If no meaningful usage scenario can be identified, return an empty `usages` list.
+* Keep activities that serve the same Task within one usage scenario, but create separate usage scenarios for different Tasks.
+* Domain, Task, Activity, and Use Status describe each individual usage scenario, not the review as a whole.
+
+Input Format
+
+[
+{
+"id": "review_1",
+"content": "review text"
+}
+]
+
+Output Format
+
+[
+{
+"id": "review_1",
+"usages": [
+{
+"domain": "",
+"task": "",
+"activity": "",
+"use_status": "actual"
+}
+]
+}
+]
+
+Use `null` rather than an empty string when a field cannot be determined.
+Return only valid JSON.
+Preserve every input ID exactly.
+Do not skip any input reviews.
+Do not include explanations, headings, markdown, or additional fields.
